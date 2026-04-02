@@ -1,3 +1,240 @@
-<html>
-<img src="images/bugaya%20logo.png">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugeye Investment | Truck Spare Parts & Logistics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Colors matched to the Bugeye Investment Logo */
+            --logo-blue: #1a1e4d; 
+            --logo-red: #7b1414;
+            --hover-red: #a51d1d;
+        }
+        body { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3, .nav-font { font-family: 'Oswald', sans-serif; }
+
+        .bg-navy { background-color: var(--logo-blue); }
+        .bg-maroon { background-color: var(--logo-red); }
+        .text-maroon { color: var(--logo-red); }
+        .text-navy { color: var(--logo-blue); }
+        .border-maroon { border-color: var(--logo-red); }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(26, 30, 77, 0.85), rgba(26, 30, 77, 0.7)), 
+                        url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center;
+        }
+
+        .btn-maroon { 
+            background-color: var(--logo-red); 
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-maroon:hover { 
+            background-color: var(--hover-red);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(123, 20, 20, 0.4);
+        }
+
+        .nav-link:hover { color: var(--logo-red); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- TOP BAR -->
+    <div class="bg-navy text-white py-2 hidden lg:block border-b border-blue-900">
+        <div class="container mx-auto px-6 flex justify-between items-center text-xs uppercase tracking-widest">
+            <div class="flex space-x-6">
+                <span><i class="fas fa-map-marker-alt text-maroon mr-2"></i> Dar es Salaam, Tanzania</span>
+                <span><i class="fas fa-phone-alt text-maroon mr-2"></i> +255 123 456 789</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-maroon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-maroon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-green-500 font-bold"><i class="fab fa-whatsapp mr-1"></i> WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="bg-white shadow-xl sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+            
+            <!-- LOGO LINKED TO GITHUB SOURCE -->
+            <a href="#home" class="flex items-center">
+                <img src="images/bugaya logo.png" alt="Bugeye Investment Logo" class="h-16 md:h-24 w-auto">
+            </a>
+
+            <!-- NAV LINKS -->
+            <div class="hidden md:flex space-x-8 nav-font text-lg uppercase font-semibold">
+                <a href="#home" class="text-navy nav-link transition mt-2">Home</a>
+                <a href="#parts" class="text-navy nav-link transition mt-2">Spare Parts</a>
+                <a href="#logistics" class="text-navy nav-link transition mt-2">Logistics</a>
+                <a href="#contact" class="bg-navy text-white px-8 py-3 rounded shadow-lg hover:bg-black transition">Get a Quote</a>
+            </div>
+            
+            <button class="md:hidden text-2xl text-navy"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-gradient h-[80vh] flex items-center text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl">
+                <h4 class="text-maroon font-bold uppercase tracking-widest mb-4">Quality & Reliability</h4>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight uppercase">Truck Spares & <br><span class="text-maroon">Global Logistics</span></h1>
+                <p class="text-xl mb-10 text-gray-200 border-l-4 border-maroon pl-6">Keeping the wheels of industry turning. Bugeye Investment provides high-performance truck components and seamless logistics across the East African corridors.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#parts" class="btn-maroon px-10 py-4 rounded font-bold shadow-xl">BROWSE PARTS</a>
+                    <a href="#contact" class="bg-white text-navy px-10 py-4 rounded font-bold hover:bg-gray-200 transition shadow-xl">FREIGHT QUOTE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE SERVICES -->
+    <section class="py-20 container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 -mt-32 relative z-20">
+            <!-- Spare Parts -->
+            <div class="bg-white p-10 shadow-2xl rounded border-t-8 border-maroon group">
+                <div class="flex items-center mb-6">
+                    <div class="bg-navy p-4 rounded shadow-lg mr-4">
+                        <i class="fas fa-tools text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-navy">Spare Parts Supply</h3>
+                </div>
+                <p class="text-gray-600 mb-8">Authorised suppliers of genuine European truck parts. We specialize in Scania, Volvo, MAN, and Mercedes-Benz components, ensuring your fleet maintains peak performance.</p>
+                <div class="grid grid-cols-2 gap-4 text-sm font-bold text-navy uppercase mb-8">
+                    <div class="flex items-center"><i class="fas fa-check text-maroon mr-2"></i> Engine Units</div>
+                    <div class="flex items-center"><i class="fas fa-check text-maroon mr-2"></i> Brake Systems</div>
+                    <div class="flex items-center"><i class="fas fa-check text-maroon mr-2"></i> Gearboxes</div>
+                    <div class="flex items-center"><i class="fas fa-check text-maroon mr-2"></i> Suspensions</div>
+                </div>
+                <a href="#contact" class="text-maroon font-bold uppercase tracking-widest flex items-center hover:translate-x-2 transition">Request Parts List <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+
+            <!-- Logistics -->
+            <div class="bg-white p-10 shadow-2xl rounded border-t-8 border-navy group">
+                <div class="flex items-center mb-6">
+                    <div class="bg-maroon p-4 rounded shadow-lg mr-4">
+                        <i class="fas fa-truck-moving text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-navy">Logistics & Haulage</h3>
+                </div>
+                <p class="text-gray-600 mb-8">Your gateway to efficient transport. We provide cross-border haulage from Dar es Salaam port to the Great Lakes region, including Rwanda, Burundi, and DRC.</p>
+                <div class="grid grid-cols-2 gap-4 text-sm font-bold text-navy uppercase mb-8">
+                    <div class="flex items-center"><i class="fas fa-check text-maroon mr-2"></i> GPS Tracking</div>
+                    <div class="flex items-center"><i class="fas fa-check text-maroon mr-2"></i> Heavy Haulage</div>
+                    <div class="flex items-center"><i class="fas fa-check text-maroon mr-2"></i> Custom Clearing</div>
+                    <div class="flex items-center"><i class="fas fa-check text-maroon mr-2"></i> 24/7 Support</div>
+                </div>
+                <a href="#contact" class="text-navy font-bold uppercase tracking-widest flex items-center hover:translate-x-2 transition">Book Shipment <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRANDS WE SUPPORT -->
+    <section id="parts" class="bg-white py-16 border-t border-b">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-navy text-xl font-bold mb-10 uppercase tracking-[0.3em]">Premium Brands We Stock</h2>
+            <div class="flex flex-wrap justify-center gap-10 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition duration-500">
+                <span class="text-3xl font-black text-navy italic">SCANIA</span>
+                <span class="text-3xl font-black text-navy italic">VOLVO</span>
+                <span class="text-3xl font-black text-navy italic">MERCEDES</span>
+                <span class="text-3xl font-black text-navy italic">M.A.N.</span>
+                <span class="text-3xl font-black text-navy italic">IVECO</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-5xl font-bold text-navy mb-6">Talk to the <br><span class="text-maroon underline decoration-navy underline-offset-8">Experts</span></h2>
+                <p class="text-lg text-gray-600 mb-10">Whether you need a specific part number or a full logistics strategy, our team is ready to provide a competitive quote.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-6 p-6 bg-white shadow-lg border-l-8 border-maroon">
+                        <i class="fas fa-phone-alt text-maroon text-2xl"></i>
+                        <div>
+                            <h4 class="font-bold text-navy uppercase text-xs">Emergency Support</h4>
+                            <p class="text-xl">+255 123 456 789</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-6 p-6 bg-white shadow-lg border-l-8 border-navy">
+                        <i class="fas fa-envelope-open text-navy text-2xl"></i>
+                        <div>
+                            <h4 class="font-bold text-navy uppercase text-xs">Email Enquiries</h4>
+                            <p class="text-xl">sales@bugeyeinvestment.co.tz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-navy p-10 rounded shadow-2xl">
+                <form class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Full Name" class="w-full p-4 rounded focus:ring-2 focus:ring-maroon outline-none">
+                        <input type="text" placeholder="Phone Number" class="w-full p-4 rounded focus:ring-2 focus:ring-maroon outline-none">
+                    </div>
+                    <input type="email" placeholder="Email Address" class="w-full p-4 rounded focus:ring-2 focus:ring-maroon outline-none">
+                    <select class="w-full p-4 rounded focus:ring-2 focus:ring-maroon outline-none font-bold">
+                        <option>Request Spare Part Details</option>
+                        <option>Request Logistics Quotation</option>
+                        <option>Partnership Opportunity</option>
+                    </select>
+                    <textarea placeholder="Describe your requirements..." class="w-full p-4 rounded focus:ring-2 focus:ring-maroon outline-none h-32"></textarea>
+                    <button class="btn-maroon w-full py-5 rounded font-bold uppercase tracking-widest shadow-lg">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy text-white pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-16">
+                <!-- LOGO IN FOOTER -->
+                <div class="mb-10 md:mb-0 text-center md:text-left">
+                    <img src="https://bventure22.github.io/BageyeInvestment/logo.png" alt="Bugeye Footer Logo" class="h-24 w-auto brightness-0 invert mx-auto md:mx-0">
+                    <p class="text-blue-200 mt-4 max-w-xs italic text-sm">Providing industrial strength solutions for the transport sector across East Africa.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-12 md:gap-24">
+                    <div>
+                        <h4 class="font-bold text-maroon mb-6 uppercase">Navigation</h4>
+                        <ul class="space-y-4 text-gray-300 text-sm">
+                            <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                            <li><a href="#parts" class="hover:text-white transition">Spare Parts</a></li>
+                            <li><a href="#logistics" class="hover:text-white transition">Logistics</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-maroon mb-6 uppercase">Quick Contact</h4>
+                        <ul class="space-y-4 text-gray-300 text-sm">
+                            <li>+255 123 456 789</li>
+                            <li>Dar es Salaam, TZ</li>
+                            <li>Support 24/7</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-900 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-blue-400 uppercase tracking-widest">
+                <p>&copy; 2025 Bugeye Investment Limited. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-6 md:mt-0">
+                    <i class="fab fa-facebook hover:text-white transition cursor-pointer"></i>
+                    <i class="fab fa-twitter hover:text-white transition cursor-pointer"></i>
+                    <i class="fab fa-linkedin hover:text-white transition cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
 </html>
