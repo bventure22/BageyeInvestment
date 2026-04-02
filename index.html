@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bugeye Investment | Truck Spare Parts & Logistics</title>
+    <title>Bageye Investment | Logistics & Truck Spares</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome 6 for modern icons including X (Twitter) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
+            /* Brand Colors extracted from your logo */
             --logo-blue: #1a1e4d; 
             --logo-red: #7b1414;
             --hover-red: #a51d1d;
@@ -21,10 +23,10 @@
         .text-maroon { color: var(--logo-red); }
         .text-navy { color: var(--logo-blue); }
 
-        /* HERO SLIDER LOGIC */
+        /* HERO SLIDER LOGIC - 3 IMAGES */
         .hero-slider-container {
             position: relative;
-            height: 80vh;
+            height: 85vh;
             overflow: hidden;
             background-color: var(--logo-blue);
         }
@@ -36,7 +38,7 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            transition: opacity 1.5s ease-in-out;
+            transition: opacity 2s ease-in-out; /* Smooth transition speed */
             z-index: 1;
         }
 
@@ -66,7 +68,7 @@
         }
 
         .main-logo { transition: transform 0.3s ease; }
-        .main-logo:hover { transform: scale(1.05); }
+        .main-logo:hover { transform: scale(1.03); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -75,14 +77,14 @@
     <div class="bg-navy text-white py-2 hidden lg:block border-b border-blue-900">
         <div class="container mx-auto px-6 flex justify-between items-center text-xs uppercase tracking-widest">
             <div class="flex space-x-6">
-                <span><i class="fas fa-map-marker-alt text-maroon mr-2"></i> Dar es Salaam, Tanzania</span>
-                <span><i class="fas fa-phone-alt text-maroon mr-2"></i> +255 123 456 789</span>
+                <span><i class="fas fa-map-marker-alt text-maroon mr-2"></i> Ushirika Building, Dar es Salaam</span>
+                <span><i class="fas fa-phone-alt text-maroon mr-2"></i> +255 747 222 777</span>
             </div>
-            <div class="flex space-x-5 text-sm">
+            <div class="flex space-x-5 text-sm items-center">
                 <a href="#" class="hover:text-maroon"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="hover:text-maroon"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="#" class="hover:text-maroon"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-green-500 font-bold"><i class="fab fa-whatsapp mr-1"></i> WhatsApp</a>
+                <a href="https://wa.me/255747222777" class="text-green-500 font-bold ml-4"><i class="fab fa-whatsapp mr-1"></i> WhatsApp Support</a>
             </div>
         </div>
     </div>
@@ -94,15 +96,15 @@
             <!-- LOGO: DOUBLE SIZE -->
             <a href="#home" class="flex items-center">
                 <img src="images/bugaya logo.png" 
-                     alt="Bugeye Investment Logo" 
+                     alt="Bageye Investment Logo" 
                      class="main-logo h-32 md:h-52 w-auto">
             </a>
 
             <!-- NAV LINKS -->
             <div class="hidden lg:flex space-x-10 nav-font text-xl uppercase font-bold items-center">
                 <a href="#home" class="text-navy hover:text-maroon transition">Home</a>
-                <a href="#parts" class="text-navy hover:text-maroon transition">Spare Parts</a>
                 <a href="#logistics" class="text-navy hover:text-maroon transition">Logistics</a>
+                <a href="#parts" class="text-navy hover:text-maroon transition">Spare Parts</a>
                 <a href="#contact" class="bg-navy text-white px-10 py-4 rounded shadow-lg hover:bg-black transition">Get a Quote</a>
             </div>
             
@@ -110,9 +112,9 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION WITH CHANGING IMAGES -->
+    <!-- HERO SECTION WITH 3-IMAGE FADE -->
     <section id="home" class="hero-slider-container flex items-center text-white">
-        <!-- Background Slider Images -->
+        <!-- Slider Images -->
         <div class="slider-img active" style="background-image: url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="slider-img" style="background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="slider-img" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');"></div>
@@ -121,59 +123,93 @@
 
         <div class="container mx-auto px-6 hero-content">
             <div class="max-w-3xl">
-                <h4 class="text-maroon font-bold uppercase tracking-widest mb-4">Industrial Strength Solutions</h4>
-                <h1 class="text-5xl md:text-8xl font-bold mb-6 leading-tight uppercase tracking-tighter">Truck Spares & <br><span class="text-maroon">Global Logistics</span></h1>
-                <p class="text-xl mb-10 text-gray-200 border-l-4 border-maroon pl-6">
-                    Keeping the wheels of industry turning across East Africa. Bugeye Investment provides genuine heavy-duty components and precision transport management.
+                <h4 class="text-maroon font-bold uppercase tracking-widest mb-4">Precision Logistics & Spares</h4>
+                <h1 class="text-6xl md:text-8xl font-bold mb-6 leading-tight uppercase tracking-tighter">Bageye <br><span class="text-maroon">Investment</span></h1>
+                <p class="text-2xl mb-10 text-gray-200 border-l-4 border-maroon pl-6 italic">
+                    Truck Spares & Global Logistics
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#parts" class="btn-maroon px-10 py-4 rounded font-bold shadow-xl">BROWSE PARTS</a>
-                    <a href="#contact" class="bg-white text-navy px-10 py-4 rounded font-bold hover:bg-gray-200 transition shadow-xl">FREIGHT QUOTE</a>
+                    <a href="#logistics" class="btn-maroon px-10 py-4 rounded font-bold shadow-xl">OUR SERVICES</a>
+                    <a href="#contact" class="bg-white text-navy px-10 py-4 rounded font-bold hover:bg-gray-200 transition shadow-xl">GET A QUOTE</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SERVICES STRIP -->
-    <section class="py-20 container mx-auto px-6 relative z-20">
+    <section id="logistics" class="py-20 container mx-auto px-6 relative z-20">
         <div class="grid md:grid-cols-2 gap-12 -mt-32">
             <div class="bg-white p-12 shadow-2xl rounded border-t-8 border-maroon group">
-                <i class="fas fa-tools text-4xl text-maroon mb-6"></i>
-                <h3 class="text-3xl font-bold text-navy mb-4 uppercase">Genuine Spare Parts</h3>
-                <p class="text-gray-600">Specialized importer of Scania, Volvo, and MAN parts. From engine rebuild kits to braking systems, we ensure OEM quality.</p>
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-truck-fast text-4xl text-maroon mr-4"></i>
+                    <h3 class="text-3xl font-bold text-navy uppercase">Logistics Excellence</h3>
+                </div>
+                <p class="text-gray-600 mb-6 text-lg">Specialized in regional haulage and supply chain management. From Dar es Salaam Port to all East African destinations, we ensure your cargo moves safely and swiftly.</p>
+                <ul class="text-navy font-bold space-y-2">
+                    <li><i class="fas fa-check text-maroon mr-2"></i> Cross-border Transportation</li>
+                    <li><i class="fas fa-check text-maroon mr-2"></i> Real-time Fleet Tracking</li>
+                    <li><i class="fas fa-check text-maroon mr-2"></i> Efficient Port Clearing</li>
+                </ul>
             </div>
             <div class="bg-white p-12 shadow-2xl rounded border-t-8 border-navy group">
-                <i class="fas fa-truck-fast text-4xl text-navy mb-6"></i>
-                <h3 class="text-3xl font-bold text-navy mb-4 uppercase">Regional Logistics</h3>
-                <p class="text-gray-600">Cross-border haulage connecting Tanzania to Rwanda, Burundi, Zambia, and DRC with full real-time cargo tracking.</p>
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-tools text-4xl text-navy mr-4"></i>
+                    <h3 class="text-3xl font-bold text-navy uppercase">Genuine Spares</h3>
+                </div>
+                <p class="text-gray-600 mb-6 text-lg">Direct importers of high-performance spare parts for Scania, Volvo, and MAN trucks. We help you minimize downtime with quality components.</p>
+                <ul class="text-navy font-bold space-y-2">
+                    <li><i class="fas fa-check text-maroon mr-2"></i> Engine Rebuild Kits</li>
+                    <li><i class="fas fa-check text-maroon mr-2"></i> Braking & Air Systems</li>
+                    <li><i class="fas fa-check text-maroon mr-2"></i> Transmission Parts</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT AREA -->
     <section id="contact" class="py-24 bg-gray-100">
         <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div>
-                <h2 class="text-6xl font-bold text-navy mb-6 uppercase tracking-tighter italic">Get In Touch</h2>
-                <div class="w-24 h-2 bg-maroon mb-8"></div>
-                <div class="space-y-8">
+                <h2 class="text-6xl font-bold text-navy mb-6 uppercase tracking-tighter italic">Contact Us</h2>
+                <div class="w-24 h-2 bg-maroon mb-12"></div>
+                
+                <div class="space-y-10">
                     <div class="flex items-center space-x-6">
-                        <i class="fas fa-phone-volume text-maroon text-3xl"></i>
-                        <p class="text-2xl font-bold text-navy">+255 123 456 789</p>
+                        <div class="bg-navy p-5 rounded-full shadow-lg">
+                            <i class="fas fa-location-dot text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-maroon uppercase text-xs tracking-widest">Headquarters</h4>
+                            <p class="text-2xl font-bold text-navy">Ushirika Building, Dar es Salaam</p>
+                        </div>
                     </div>
                     <div class="flex items-center space-x-6">
-                        <i class="fa-brands fa-x-twitter text-navy text-3xl"></i>
-                        <p class="text-xl text-gray-600">Follow us for updates @BugeyeInv</p>
+                        <div class="bg-navy p-5 rounded-full shadow-lg">
+                            <i class="fas fa-envelope text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-maroon uppercase text-xs tracking-widest">Email Enquiries</h4>
+                            <p class="text-2xl font-bold text-navy">bageyeinvestment2002@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <div class="bg-navy p-5 rounded-full shadow-lg">
+                            <i class="fas fa-phone-volume text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-maroon uppercase text-xs tracking-widest">Call Today</h4>
+                            <p class="text-2xl font-bold text-navy">+255 747 222 777</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="bg-navy p-12 rounded shadow-2xl border-t-8 border-maroon">
-                <form class="space-y-5">
-                    <input type="text" placeholder="Your Name" class="w-full p-4 rounded outline-none focus:ring-2 focus:ring-maroon shadow-inner">
+                <form class="space-y-6">
+                    <input type="text" placeholder="Full Name" class="w-full p-4 rounded outline-none focus:ring-2 focus:ring-maroon shadow-inner">
                     <input type="email" placeholder="Email Address" class="w-full p-4 rounded outline-none focus:ring-2 focus:ring-maroon shadow-inner">
-                    <textarea placeholder="Tell us about your requirements..." class="w-full p-4 rounded h-40 outline-none focus:ring-2 focus:ring-maroon shadow-inner"></textarea>
-                    <button class="btn-maroon w-full py-5 rounded font-bold uppercase tracking-widest shadow-lg text-xl">Submit Inquiry</button>
+                    <textarea placeholder="Describe your logistics or spare parts needs..." class="w-full p-4 rounded h-40 outline-none focus:ring-2 focus:ring-maroon shadow-inner"></textarea>
+                    <button class="btn-maroon w-full py-5 rounded font-bold uppercase tracking-widest shadow-lg text-xl">Send Inquiry</button>
                 </form>
             </div>
         </div>
@@ -185,9 +221,9 @@
             <div class="flex flex-col md:flex-row justify-between items-center mb-20">
                 <div class="mb-12 md:mb-0 text-center md:text-left">
                     <img src="images/bugaya logo.png" 
-                         alt="Bugeye Footer Logo" 
+                         alt="Bageye Footer Logo" 
                          class="h-48 w-auto brightness-0 invert mx-auto md:mx-0">
-                    <p class="text-blue-300 mt-6 max-w-sm italic">Superior Trucking Components & Freight Management for the East African Corridor.</p>
+                    <p class="text-blue-300 mt-6 max-w-sm italic">Bageye Investment Limited. Reliability and efficiency in every shipment.</p>
                 </div>
                 
                 <div class="flex flex-col items-center md:items-end">
@@ -200,12 +236,8 @@
                 </div>
             </div>
             
-            <div class="border-t border-blue-900 pt-12 flex flex-col md:flex-row justify-between items-center text-xs text-blue-400 uppercase tracking-widest">
-                <p>&copy; 2025 Bugeye Investment Limited. All Rights Reserved.</p>
-                <div class="flex space-x-8 mt-8 md:mt-0">
-                    <a href="#" class="hover:text-white">Privacy Policy</a>
-                    <a href="#" class="hover:text-white">Terms of Service</a>
-                </div>
+            <div class="border-t border-blue-900 pt-12 text-center text-xs text-blue-400 uppercase tracking-widest">
+                <p>&copy; 2025 Bageye Investment Limited. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -221,8 +253,8 @@
             slides[currentSlide].classList.add('active');
         }
 
-        // Change image every 5 seconds
-        setInterval(nextSlide, 5000);
+        // Cycle through the 3 images every 6 seconds
+        setInterval(nextSlide, 6000);
     </script>
 
 </body>
