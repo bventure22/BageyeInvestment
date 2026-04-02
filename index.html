@@ -6,15 +6,15 @@
     <title>Bageye Investment | Logistics & Truck Spares</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Premium Google Fonts for Visibility -->
+    <!-- Premium Google Fonts for Readability on Mobile -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #0d1137; /* Slightly darker for better contrast */
+            --navy: #0d1137; 
             --maroon: #7b1414;
             --maroon-light: #a51d1d;
         }
-        body { font-family: 'Inter', sans-serif; color: #111827; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: #111827; scroll-behavior: smooth; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; letter-spacing: -0.025em; }
 
         .bg-navy { background-color: var(--navy); }
@@ -25,7 +25,8 @@
         /* HERO SLIDER */
         .hero-slider-container {
             position: relative;
-            height: 75vh;
+            height: 70vh;
+            min-height: 500px;
             overflow: hidden;
             background-color: var(--navy);
         }
@@ -43,36 +44,48 @@
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(13, 17, 55, 0.75); /* High contrast overlay */
+            background: linear-gradient(to bottom, rgba(13, 17, 55, 0.85), rgba(13, 17, 55, 0.65)); 
             z-index: 2;
         }
         .hero-content { position: relative; z-index: 10; }
 
         /* Card Visibility */
         .card-shadow {
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
         }
-        .card-shadow:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
+        @media (min-width: 768px) {
+            .card-shadow:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+        
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 400px;
         }
     </style>
 </head>
 <body>
 
-    <!-- TOP BAR (Shortened & High Visibility) -->
+    <!-- TOP BAR (Hidden on mobile for better UX, shown on desktop) -->
     <div class="bg-navy text-white py-2 border-b border-white/10 hidden lg:block">
-        <div class="container mx-auto px-6 flex justify-between items-center text-sm font-semibold tracking-wide">
-            <div class="flex space-x-8">
+        <div class="container mx-auto px-4 flex justify-between items-center text-sm font-semibold tracking-wide">
+            <div class="flex space-x-6">
                 <span><i class="fas fa-location-dot text-maroon mr-2"></i> Ushirika Building, Dar es Salaam</span>
                 <span><i class="fas fa-phone-flip text-maroon mr-2"></i> +255 747 222 777</span>
             </div>
-            <div class="flex space-x-6 items-center">
+            <div class="flex space-x-5 items-center">
                 <a href="#" class="hover:text-maroon transition"><i class="fa-brands fa-facebook"></i></a>
                 <a href="#" class="hover:text-maroon transition"><i class="fa-brands fa-x-twitter text-lg"></i></a>
                 <a href="#" class="hover:text-maroon transition"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://wa.me/255747222777" class="bg-green-600 px-3 py-1 rounded text-white flex items-center">
+                <a href="https://wa.me/255747222777" class="bg-green-600 px-3 py-1 rounded text-white flex items-center text-xs">
                     <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp
                 </a>
             </div>
@@ -80,22 +93,35 @@
     </div>
 
     <!-- NAVIGATION TABS -->
-    <nav class="bg-white shadow-xl sticky top-0 z-50 py-2 border-b-2 border-gray-100">
-        <div class="container mx-auto px-6 flex justify-between items-center">
+    <nav class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="container mx-auto px-4 flex justify-between items-center py-2 md:py-1">
             <!-- Logo -->
             <a href="#home">
                 <img src="images/bugaya logo.png" alt="Bageye Investment" class="h-16 md:h-24 w-auto">
             </a>
 
-            <!-- Menu Tabs -->
-            <div class="hidden lg:flex items-center space-x-12">
-                <a href="#home" class="text-navy font-bold uppercase hover:text-maroon transition">Home</a>
-                <a href="#about" class="text-navy font-bold uppercase hover:text-maroon transition">About Us</a>
-                <a href="#services" class="text-navy font-bold uppercase hover:text-maroon transition">Our Services</a>
-                <a href="#contact" class="bg-maroon text-white px-8 py-3 rounded-lg font-bold uppercase hover:bg-navy transition shadow-md">Contact Us</a>
+            <!-- Desktop Menu Tabs -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#home" class="text-navy font-bold uppercase text-sm hover:text-maroon transition">Home</a>
+                <a href="#about" class="text-navy font-bold uppercase text-sm hover:text-maroon transition">About Us</a>
+                <a href="#services" class="text-navy font-bold uppercase text-sm hover:text-maroon transition">Our Services</a>
+                <a href="#contact" class="bg-maroon text-white px-6 py-2.5 rounded font-bold uppercase text-sm hover:bg-navy transition shadow-md">Contact Us</a>
             </div>
             
-            <button class="lg:hidden text-3xl text-navy"><i class="fas fa-bars"></i></button>
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="lg:hidden text-2xl text-navy focus:outline-none p-2">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 font-bold uppercase text-sm">
+            <div class="flex flex-col p-4 space-y-4">
+                <a href="#home" class="text-navy hover:text-maroon py-2 border-b border-gray-50" onclick="toggleMenu()">Home</a>
+                <a href="#about" class="text-navy hover:text-maroon py-2 border-b border-gray-50" onclick="toggleMenu()">About Us</a>
+                <a href="#services" class="text-navy hover:text-maroon py-2 border-b border-gray-50" onclick="toggleMenu()">Our Services</a>
+                <a href="#contact" class="bg-maroon text-white px-4 py-3 rounded text-center hover:bg-navy transition" onclick="toggleMenu()">Contact Us</a>
+            </div>
         </div>
     </nav>
 
@@ -107,12 +133,13 @@
         
         <div class="hero-overlay"></div>
 
-        <div class="container mx-auto px-6 hero-content text-white">
+        <div class="container mx-auto px-4 hero-content text-white">
             <div class="max-w-4xl">
-                <h1 class="text-6xl md:text-8xl font-extrabold mb-6 leading-tight uppercase">
-                    Bageye <br><span class="text-maroon underline decoration-white underline-offset-8">Investment</span>
+                <!-- Font size carefully scaled for small screens -->
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold mb-4 leading-tight uppercase">
+                    Bageye <br><span class="text-maroon underline decoration-white underline-offset-4">Investment</span>
                 </h1>
-                <p class="text-2xl md:text-3xl font-semibold text-gray-100 max-w-2xl border-l-8 border-maroon pl-8">
+                <p class="text-base sm:text-lg md:text-2xl font-semibold text-gray-100 max-w-2xl border-l-4 border-maroon pl-4 md:pl-6">
                     Dominating Logistics and Heavy Truck Spare Part Solutions in East Africa.
                 </p>
             </div>
@@ -120,18 +147,19 @@
     </section>
 
     <!-- ABOUT US SECTION -->
-    <section id="about" class="py-24 bg-white">
-        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
-            <div class="lg:w-1/2">
-                <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=800&q=80" alt="About" class="rounded-2xl shadow-2xl">
+    <section id="about" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-10 md:gap-16">
+            <div class="w-full lg:w-1/2">
+                <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=800&q=80" alt="About" class="rounded-xl shadow-lg w-full h-auto">
             </div>
-            <div class="lg:w-1/2">
-                <h2 class="text-navy text-5xl font-extrabold uppercase mb-6 tracking-tighter">About Bageye</h2>
-                <div class="w-20 h-2 bg-maroon mb-8"></div>
-                <p class="text-xl text-gray-700 leading-relaxed mb-6">
+            <div class="w-full lg:w-1/2">
+                <!-- Mobile optimized header -->
+                <h2 class="text-navy text-3xl md:text-5xl font-extrabold uppercase mb-4 tracking-tighter">About Bageye</h2>
+                <div class="w-16 h-1.5 bg-maroon mb-6"></div>
+                <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
                     Bageye Investment Limited is a premier logistics provider based in the historic <strong>Ushirika Building</strong>, Dar es Salaam. We bridge the gap between global manufacturers and regional transporters.
                 </p>
-                <p class="text-xl text-gray-700 leading-relaxed">
+                <p class="text-base md:text-lg text-gray-700 leading-relaxed">
                     With over two decades of industry experience, we specialize in high-efficiency haulage and the supply of genuine heavy-duty spare parts for Scania, Volvo, and MAN.
                 </p>
             </div>
@@ -139,65 +167,77 @@
     </section>
 
     <!-- SERVICES CARDS SECTION -->
-    <section id="services" class="py-24 bg-gray-50 border-t border-b border-gray-200">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-5xl md:text-6xl font-extrabold text-navy uppercase">Our Services</h2>
-                <div class="w-32 h-2 bg-maroon mx-auto mt-4"></div>
+    <section id="services" class="py-12 md:py-20 bg-gray-50 border-t border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10 md:mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-navy uppercase">Our Services</h2>
+                <div class="w-20 h-1.5 bg-maroon mx-auto mt-3"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
                 <!-- Card 1 -->
-                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-8 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=600&q=400" class="w-full h-64 object-cover" alt="Road Freight">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-extrabold text-navy mb-4">Road Freight Transportation</h3>
-                        <a href="#" class="text-maroon font-bold text-lg hover:underline">Show more <i class="fas fa-arrow-right ml-1"></i></a>
+                <div class="bg-white rounded-lg overflow-hidden card-shadow border-b-4 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=600&q=400" class="w-full h-48 sm:h-56 lg:h-64 object-cover" alt="Road Freight">
+                    <div class="p-6">
+                        <h3 class="text-xl font-extrabold text-navy mb-3">Road Freight Transportation</h3>
+                        <a href="#" class="text-maroon font-bold text-base hover:text-navy transition inline-flex items-center">
+                            Show more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-8 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=400" class="w-full h-64 object-cover" alt="Heavy Duty">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-extrabold text-navy mb-4">Heavy-Duty Transportation</h3>
-                        <a href="#" class="text-maroon font-bold text-lg hover:underline">Show more <i class="fas fa-arrow-right ml-1"></i></a>
+                <div class="bg-white rounded-lg overflow-hidden card-shadow border-b-4 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=400" class="w-full h-48 sm:h-56 lg:h-64 object-cover" alt="Heavy Duty">
+                    <div class="p-6">
+                        <h3 class="text-xl font-extrabold text-navy mb-3">Heavy-Duty Transportation</h3>
+                        <a href="#" class="text-maroon font-bold text-base hover:text-navy transition inline-flex items-center">
+                            Show more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-8 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=600&q=400" class="w-full h-64 object-cover" alt="Spare Parts">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-extrabold text-navy mb-4">Heavy Truck Spare Parts</h3>
-                        <a href="#" class="text-maroon font-bold text-lg hover:underline">Show more <i class="fas fa-arrow-right ml-1"></i></a>
+                <div class="bg-white rounded-lg overflow-hidden card-shadow border-b-4 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=600&q=400" class="w-full h-48 sm:h-56 lg:h-64 object-cover" alt="Spare Parts">
+                    <div class="p-6">
+                        <h3 class="text-xl font-extrabold text-navy mb-3">Heavy Truck Spare Parts</h3>
+                        <a href="#" class="text-maroon font-bold text-base hover:text-navy transition inline-flex items-center">
+                            Show more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-8 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=400" class="w-full h-64 object-cover" alt="Last Mile">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-extrabold text-navy mb-4">Last-Mile Delivery</h3>
-                        <a href="#" class="text-maroon font-bold text-lg hover:underline">Show more <i class="fas fa-arrow-right ml-1"></i></a>
+                <div class="bg-white rounded-lg overflow-hidden card-shadow border-b-4 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=400" class="w-full h-48 sm:h-56 lg:h-64 object-cover" alt="Last Mile">
+                    <div class="p-6">
+                        <h3 class="text-xl font-extrabold text-navy mb-3">Last-Mile Delivery</h3>
+                        <a href="#" class="text-maroon font-bold text-base hover:text-navy transition inline-flex items-center">
+                            Show more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-8 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=400" class="w-full h-64 object-cover" alt="Cargo Handling">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-extrabold text-navy mb-4">Cargo Handling</h3>
-                        <a href="#" class="text-maroon font-bold text-lg hover:underline">Show more <i class="fas fa-arrow-right ml-1"></i></a>
+                <div class="bg-white rounded-lg overflow-hidden card-shadow border-b-4 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=400" class="w-full h-48 sm:h-56 lg:h-64 object-cover" alt="Cargo Handling">
+                    <div class="p-6">
+                        <h3 class="text-xl font-extrabold text-navy mb-3">Cargo Handling</h3>
+                        <a href="#" class="text-maroon font-bold text-base hover:text-navy transition inline-flex items-center">
+                            Show more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Card 6 -->
-                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-8 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1566694271453-390536dd1f0d?auto=format&fit=crop&w=600&q=400" class="w-full h-64 object-cover" alt="Logistics Support">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-extrabold text-navy mb-4">Logistics Support</h3>
-                        <a href="#" class="text-maroon font-bold text-lg hover:underline">Show more <i class="fas fa-arrow-right ml-1"></i></a>
+                <div class="bg-white rounded-lg overflow-hidden card-shadow border-b-4 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1566694271453-390536dd1f0d?auto=format&fit=crop&w=600&q=400" class="w-full h-48 sm:h-56 lg:h-64 object-cover" alt="Logistics Support">
+                    <div class="p-6">
+                        <h3 class="text-xl font-extrabold text-navy mb-3">Logistics Support</h3>
+                        <a href="#" class="text-maroon font-bold text-base hover:text-navy transition inline-flex items-center">
+                            Show more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -205,67 +245,69 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-24 bg-navy text-white">
-        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <section id="contact" class="py-12 md:py-20 bg-navy text-white">
+        <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
             <div>
-                <h2 class="text-5xl md:text-6xl font-extrabold uppercase mb-8 underline decoration-maroon underline-offset-8">Contact Us</h2>
-                <div class="space-y-10">
-                    <div class="flex items-start space-x-6">
-                        <div class="bg-maroon p-4 rounded-xl shadow-lg">
-                            <i class="fas fa-map-location text-3xl"></i>
+                <h2 class="text-3xl md:text-5xl font-extrabold uppercase mb-4 underline decoration-maroon underline-offset-4">Contact Us</h2>
+                <p class="text-sm md:text-base text-gray-300 mb-8 max-w-lg">Get in touch with our operations team for competitive logistics quotes or high-quality heavy-duty truck parts.</p>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-maroon p-3 rounded-lg shadow-md">
+                            <i class="fas fa-map-location text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="text-maroon font-bold uppercase tracking-widest text-sm">Our Location</h4>
-                            <p class="text-2xl font-bold">Ushirika Building, Dar es Salaam</p>
+                            <h4 class="text-maroon font-bold uppercase tracking-widest text-xs">Our Location</h4>
+                            <p class="text-lg md:text-xl font-bold">Ushirika Building, Dar es Salaam</p>
                         </div>
                     </div>
-                    <div class="flex items-start space-x-6">
-                        <div class="bg-maroon p-4 rounded-xl shadow-lg">
-                            <i class="fas fa-envelope-open-text text-3xl"></i>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-maroon p-3 rounded-lg shadow-md">
+                            <i class="fas fa-envelope-open-text text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="text-maroon font-bold uppercase tracking-widest text-sm">Send Email</h4>
-                            <p class="text-2xl font-bold">bageyeinvestment2002@gmail.com</p>
+                            <h4 class="text-maroon font-bold uppercase tracking-widest text-xs">Send Email</h4>
+                            <p class="text-lg md:text-xl font-bold break-all">bageyeinvestment2002@gmail.com</p>
                         </div>
                     </div>
-                    <div class="flex items-start space-x-6">
-                        <div class="bg-maroon p-4 rounded-xl shadow-lg">
-                            <i class="fas fa-phone-volume text-3xl"></i>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-maroon p-3 rounded-lg shadow-md">
+                            <i class="fas fa-phone-volume text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="text-maroon font-bold uppercase tracking-widest text-sm">Call Center</h4>
-                            <p class="text-2xl font-bold">+255 747 222 777</p>
+                            <h4 class="text-maroon font-bold uppercase tracking-widest text-xs">Call Center</h4>
+                            <p class="text-lg md:text-xl font-bold">+255 747 222 777</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white p-12 rounded-3xl text-navy shadow-2xl">
-                <form class="space-y-6">
-                    <input type="text" placeholder="Full Name" class="w-full p-4 rounded-xl border-2 border-gray-100 focus:border-maroon outline-none bg-gray-50 font-semibold">
-                    <input type="email" placeholder="Email Address" class="w-full p-4 rounded-xl border-2 border-gray-100 focus:border-maroon outline-none bg-gray-50 font-semibold">
-                    <textarea placeholder="Tell us how we can help..." class="w-full p-4 rounded-xl border-2 border-gray-100 focus:border-maroon outline-none bg-gray-50 font-semibold h-40"></textarea>
-                    <button class="bg-maroon w-full py-5 rounded-xl text-white font-extrabold uppercase tracking-widest shadow-xl hover:bg-navy transition text-xl">Send Inquiry</button>
+            <div class="bg-white p-6 md:p-10 rounded-xl text-navy shadow-xl w-full">
+                <form class="space-y-4">
+                    <input type="text" placeholder="Full Name" class="w-full p-3.5 rounded-lg border border-gray-200 focus:border-maroon outline-none bg-gray-50 text-base font-semibold">
+                    <input type="email" placeholder="Email Address" class="w-full p-3.5 rounded-lg border border-gray-200 focus:border-maroon outline-none bg-gray-50 text-base font-semibold">
+                    <textarea placeholder="Tell us how we can help..." class="w-full p-3.5 rounded-lg border border-gray-200 focus:border-maroon outline-none bg-gray-50 text-base font-semibold h-32 md:h-40"></textarea>
+                    <button class="bg-maroon w-full py-4 rounded-lg text-white font-extrabold uppercase tracking-widest shadow-lg hover:bg-navy transition text-lg">Send Inquiry</button>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <img src="images/bugaya logo.png" alt="Footer Logo" class="h-32 mx-auto mb-8 brightness-0 invert">
-            <div class="flex justify-center space-x-10 mb-8 text-3xl">
+    <footer class="bg-black text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <img src="images/bugaya logo.png" alt="Footer Logo" class="h-24 md:h-32 mx-auto mb-6 brightness-0 invert">
+            <div class="flex justify-center space-x-8 mb-6 text-2xl">
                 <a href="#" class="hover:text-maroon"><i class="fa-brands fa-facebook"></i></a>
                 <a href="#" class="hover:text-maroon"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="#" class="hover:text-maroon"><i class="fa-brands fa-linkedin"></i></a>
             </div>
-            <p class="text-gray-500 font-bold uppercase tracking-widest text-sm">&copy; 2025 Bageye Investment Limited. Reliability & Excellence.</p>
+            <p class="text-gray-600 font-bold uppercase tracking-widest text-xs">&copy; 2025 Bageye Investment Limited. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- SLIDER LOGIC -->
+    <!-- LOGIC FOR SLIDER & MOBILE MENU -->
     <script>
+        // Hero Slider Logic
         const slides = document.querySelectorAll('.slider-img');
         let current = 0;
 
@@ -275,6 +317,18 @@
             slides[current].classList.add('active');
         }
         setInterval(nextSlide, 5000);
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        function toggleMenu() {
+            mobileMenu.classList.remove('open');
+        }
     </script>
 
 </body>
