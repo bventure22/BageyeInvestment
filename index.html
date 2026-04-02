@@ -3,35 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bageye Investment | Professional Logistics Solutions</title>
+    <title>Bageye Investment | Logistics & Truck Spares</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Premium Google Fonts for Visibility -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --logo-blue: #1a1e4d; 
-            --logo-red: #7b1414;
-            --hover-red: #a51d1d;
+            --navy: #0d1137; /* Slightly darker for better contrast */
+            --maroon: #7b1414;
+            --maroon-light: #a51d1d;
         }
-        body { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
-        h1, h2, h3, .nav-font { font-family: 'Oswald', sans-serif; }
+        body { font-family: 'Inter', sans-serif; color: #111827; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; letter-spacing: -0.025em; }
 
-        .bg-navy { background-color: var(--logo-blue); }
-        .bg-maroon { background-color: var(--logo-red); }
-        .text-maroon { color: var(--logo-red); }
-        .text-navy { color: var(--logo-blue); }
+        .bg-navy { background-color: var(--navy); }
+        .bg-maroon { background-color: var(--maroon); }
+        .text-maroon { color: var(--maroon); }
+        .text-navy { color: var(--navy); }
 
-        /* HERO SLIDER LOGIC */
+        /* HERO SLIDER */
         .hero-slider-container {
             position: relative;
-            height: 70vh; /* Reduced height to bring content up */
+            height: 75vh;
             overflow: hidden;
-            background-color: var(--logo-blue);
+            background-color: var(--navy);
         }
-
         .slider-img {
             position: absolute;
-            top: 0; left: 0;
+            inset: 0;
             width: 100%; height: 100%;
             background-size: cover;
             background-position: center;
@@ -39,150 +39,165 @@
             transition: opacity 2s ease-in-out;
             z-index: 1;
         }
-
         .slider-img.active { opacity: 1; }
-
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to right, rgba(26, 30, 77, 0.9), rgba(26, 30, 77, 0.4));
+            background: rgba(13, 17, 55, 0.75); /* High contrast overlay */
             z-index: 2;
         }
+        .hero-content { position: relative; z-index: 10; }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        /* CARD HOVER EFFECT */
-        .solution-card {
+        /* Card Visibility */
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
-        .solution-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        .card-shadow:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <!-- TOP BAR (Shortened) -->
-    <div class="bg-navy text-white py-1 hidden lg:block border-b border-blue-900">
-        <div class="container mx-auto px-6 flex justify-between items-center text-[10px] uppercase tracking-widest">
-            <div class="flex space-x-6">
-                <span><i class="fas fa-map-marker-alt text-maroon mr-1"></i> Ushirika Building, Dar es Salaam</span>
-                <span><i class="fas fa-phone text-maroon mr-1"></i> +255 747 222 777</span>
+    <!-- TOP BAR (Shortened & High Visibility) -->
+    <div class="bg-navy text-white py-2 border-b border-white/10 hidden lg:block">
+        <div class="container mx-auto px-6 flex justify-between items-center text-sm font-semibold tracking-wide">
+            <div class="flex space-x-8">
+                <span><i class="fas fa-location-dot text-maroon mr-2"></i> Ushirika Building, Dar es Salaam</span>
+                <span><i class="fas fa-phone-flip text-maroon mr-2"></i> +255 747 222 777</span>
             </div>
-            <div class="flex space-x-4 items-center">
-                <a href="#" class="hover:text-maroon"><i class="fab fa-facebook text-sm"></i></a>
-                <a href="#" class="hover:text-maroon"><i class="fa-brands fa-x-twitter text-sm"></i></a>
-                <a href="#" class="hover:text-maroon"><i class="fab fa-linkedin text-sm"></i></a>
-                <span class="text-green-500 ml-2 font-bold"><i class="fab fa-whatsapp mr-1"></i> WhatsApp</span>
+            <div class="flex space-x-6 items-center">
+                <a href="#" class="hover:text-maroon transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-maroon transition"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                <a href="#" class="hover:text-maroon transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.me/255747222777" class="bg-green-600 px-3 py-1 rounded text-white flex items-center">
+                    <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- NAVIGATION (Slimmer Height) -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-2 flex justify-between items-center min-h-[90px]">
-            
-            <!-- LOGO: Large but compact -->
-            <a href="#home" class="flex items-center">
-                <img src="images/bugaya logo.png" 
-                     alt="Bageye Investment Logo" 
-                     class="h-20 md:h-28 w-auto">
+    <!-- NAVIGATION TABS -->
+    <nav class="bg-white shadow-xl sticky top-0 z-50 py-2 border-b-2 border-gray-100">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home">
+                <img src="images/bugaya logo.png" alt="Bageye Investment" class="h-16 md:h-24 w-auto">
             </a>
 
-            <!-- NAV LINKS -->
-            <div class="hidden lg:flex space-x-8 nav-font text-lg uppercase font-bold items-center">
-                <a href="#home" class="text-navy hover:text-maroon transition">Home</a>
-                <a href="#solutions" class="text-navy hover:text-maroon transition">Solutions</a>
-                <a href="#contact" class="bg-navy text-white px-8 py-3 rounded shadow hover:bg-black transition text-base">Get a Quote</a>
+            <!-- Menu Tabs -->
+            <div class="hidden lg:flex items-center space-x-12">
+                <a href="#home" class="text-navy font-bold uppercase hover:text-maroon transition">Home</a>
+                <a href="#about" class="text-navy font-bold uppercase hover:text-maroon transition">About Us</a>
+                <a href="#services" class="text-navy font-bold uppercase hover:text-maroon transition">Our Services</a>
+                <a href="#contact" class="bg-maroon text-white px-8 py-3 rounded-lg font-bold uppercase hover:bg-navy transition shadow-md">Contact Us</a>
             </div>
             
             <button class="lg:hidden text-3xl text-navy"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="hero-slider-container flex items-center text-white">
+    <!-- HERO SECTION WITH SLIDER -->
+    <section id="home" class="hero-slider-container flex items-center">
         <div class="slider-img active" style="background-image: url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="slider-img" style="background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="slider-img" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80');"></div>
         
         <div class="hero-overlay"></div>
 
-        <div class="container mx-auto px-6 hero-content">
-            <div class="max-w-3xl">
-                <h4 class="text-maroon font-bold uppercase tracking-widest mb-2">Bageye Investment Limited</h4>
-                <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight uppercase tracking-tighter">Your Logistics <br><span class="text-maroon">Partner</span></h1>
-                <p class="text-xl text-gray-200 border-l-4 border-maroon pl-6">
-                    Professional Road Freight & Heavy Truck Spare Part Solutions based in Dar es Salaam.
+        <div class="container mx-auto px-6 hero-content text-white">
+            <div class="max-w-4xl">
+                <h1 class="text-6xl md:text-8xl font-extrabold mb-6 leading-tight uppercase">
+                    Bageye <br><span class="text-maroon underline decoration-white underline-offset-8">Investment</span>
+                </h1>
+                <p class="text-2xl md:text-3xl font-semibold text-gray-100 max-w-2xl border-l-8 border-maroon pl-8">
+                    Dominating Logistics and Heavy Truck Spare Part Solutions in East Africa.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- SOLUTIONS GRID SECTION (Body Center) -->
-    <section id="solutions" class="py-20 bg-white">
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2">
+                <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=800&q=80" alt="About" class="rounded-2xl shadow-2xl">
+            </div>
+            <div class="lg:w-1/2">
+                <h2 class="text-navy text-5xl font-extrabold uppercase mb-6 tracking-tighter">About Bageye</h2>
+                <div class="w-20 h-2 bg-maroon mb-8"></div>
+                <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                    Bageye Investment Limited is a premier logistics provider based in the historic <strong>Ushirika Building</strong>, Dar es Salaam. We bridge the gap between global manufacturers and regional transporters.
+                </p>
+                <p class="text-xl text-gray-700 leading-relaxed">
+                    With over two decades of industry experience, we specialize in high-efficiency haulage and the supply of genuine heavy-duty spare parts for Scania, Volvo, and MAN.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES CARDS SECTION -->
+    <section id="services" class="py-24 bg-gray-50 border-t border-b border-gray-200">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-navy uppercase tracking-tighter">Our Core Solutions</h2>
-                <div class="w-24 h-1 bg-maroon mx-auto mt-4"></div>
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-extrabold text-navy uppercase">Our Services</h2>
+                <div class="w-32 h-2 bg-maroon mx-auto mt-4"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <!-- Card 1 -->
-                <div class="solution-card bg-gray-50 overflow-hidden rounded-lg shadow-md border-b-4 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=600&q=400" class="w-full h-56 object-cover" alt="Road Freight">
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-navy mb-4">Road Freight Transportation</h3>
-                        <a href="#" class="text-maroon font-bold uppercase text-sm border-b-2 border-transparent hover:border-maroon transition">Show more →</a>
+                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-8 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=600&q=400" class="w-full h-64 object-cover" alt="Road Freight">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-extrabold text-navy mb-4">Road Freight Transportation</h3>
+                        <a href="#" class="text-maroon font-bold text-lg hover:underline">Show more <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="solution-card bg-gray-50 overflow-hidden rounded-lg shadow-md border-b-4 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=400" class="w-full h-56 object-cover" alt="Heavy Duty">
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-navy mb-4">Heavy-Duty Transportation</h3>
-                        <a href="#" class="text-maroon font-bold uppercase text-sm border-b-2 border-transparent hover:border-maroon transition">Show more →</a>
+                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-8 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=400" class="w-full h-64 object-cover" alt="Heavy Duty">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-extrabold text-navy mb-4">Heavy-Duty Transportation</h3>
+                        <a href="#" class="text-maroon font-bold text-lg hover:underline">Show more <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="solution-card bg-gray-50 overflow-hidden rounded-lg shadow-md border-b-4 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1486006396193-471a28893047?auto=format&fit=crop&w=600&q=400" class="w-full h-56 object-cover" alt="Spare Parts">
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-navy mb-4 text-[17px]">Heavy Truck Spare Part Solutions</h3>
-                        <a href="#" class="text-maroon font-bold uppercase text-sm border-b-2 border-transparent hover:border-maroon transition">Show more →</a>
+                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-8 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=600&q=400" class="w-full h-64 object-cover" alt="Spare Parts">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-extrabold text-navy mb-4">Heavy Truck Spare Parts</h3>
+                        <a href="#" class="text-maroon font-bold text-lg hover:underline">Show more <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="solution-card bg-gray-50 overflow-hidden rounded-lg shadow-md border-b-4 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=400" class="w-full h-56 object-cover" alt="Last Mile">
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-navy mb-4">Last-Mile Delivery</h3>
-                        <a href="#" class="text-maroon font-bold uppercase text-sm border-b-2 border-transparent hover:border-maroon transition">Show more →</a>
+                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-8 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=400" class="w-full h-64 object-cover" alt="Last Mile">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-extrabold text-navy mb-4">Last-Mile Delivery</h3>
+                        <a href="#" class="text-maroon font-bold text-lg hover:underline">Show more <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="solution-card bg-gray-50 overflow-hidden rounded-lg shadow-md border-b-4 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=600&q=400" class="w-full h-56 object-cover" alt="Cargo Handling">
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-navy mb-4">Cargo Handling</h3>
-                        <a href="#" class="text-maroon font-bold uppercase text-sm border-b-2 border-transparent hover:border-maroon transition">Show more →</a>
+                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-8 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=400" class="w-full h-64 object-cover" alt="Cargo Handling">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-extrabold text-navy mb-4">Cargo Handling</h3>
+                        <a href="#" class="text-maroon font-bold text-lg hover:underline">Show more <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
 
                 <!-- Card 6 -->
-                <div class="solution-card bg-gray-50 overflow-hidden rounded-lg shadow-md border-b-4 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1566694271453-390536dd1f0d?auto=format&fit=crop&w=600&q=400" class="w-full h-56 object-cover" alt="Logistics Support">
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold text-navy mb-4">Logistics Support</h3>
-                        <a href="#" class="text-maroon font-bold uppercase text-sm border-b-2 border-transparent hover:border-maroon transition">Show more →</a>
+                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-8 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1566694271453-390536dd1f0d?auto=format&fit=crop&w=600&q=400" class="w-full h-64 object-cover" alt="Logistics Support">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-extrabold text-navy mb-4">Logistics Support</h3>
+                        <a href="#" class="text-maroon font-bold text-lg hover:underline">Show more <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
             </div>
@@ -190,43 +205,66 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <section id="contact" class="py-24 bg-navy text-white">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div>
-                <h2 class="text-5xl font-bold text-navy uppercase tracking-tighter">Reach Out</h2>
-                <div class="w-20 h-1 bg-maroon my-6"></div>
-                <div class="space-y-6">
-                    <p class="text-lg flex items-center"><i class="fas fa-building text-maroon w-8"></i> Ushirika Building, Dar es Salaam</p>
-                    <p class="text-lg flex items-center"><i class="fas fa-phone-volume text-maroon w-8"></i> +255 747 222 777</p>
-                    <p class="text-lg flex items-center"><i class="fas fa-envelope text-maroon w-8"></i> bageyeinvestment2002@gmail.com</p>
+                <h2 class="text-5xl md:text-6xl font-extrabold uppercase mb-8 underline decoration-maroon underline-offset-8">Contact Us</h2>
+                <div class="space-y-10">
+                    <div class="flex items-start space-x-6">
+                        <div class="bg-maroon p-4 rounded-xl shadow-lg">
+                            <i class="fas fa-map-location text-3xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-maroon font-bold uppercase tracking-widest text-sm">Our Location</h4>
+                            <p class="text-2xl font-bold">Ushirika Building, Dar es Salaam</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-6">
+                        <div class="bg-maroon p-4 rounded-xl shadow-lg">
+                            <i class="fas fa-envelope-open-text text-3xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-maroon font-bold uppercase tracking-widest text-sm">Send Email</h4>
+                            <p class="text-2xl font-bold">bageyeinvestment2002@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-6">
+                        <div class="bg-maroon p-4 rounded-xl shadow-lg">
+                            <i class="fas fa-phone-volume text-3xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-maroon font-bold uppercase tracking-widest text-sm">Call Center</h4>
+                            <p class="text-2xl font-bold">+255 747 222 777</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-navy p-10 rounded-lg shadow-xl text-white">
-                <form class="space-y-4">
-                    <input type="text" placeholder="Name" class="w-full p-3 rounded text-navy outline-none">
-                    <input type="email" placeholder="Email" class="w-full p-3 rounded text-navy outline-none">
-                    <textarea placeholder="Your message" class="w-full p-3 rounded h-32 text-navy outline-none"></textarea>
-                    <button class="w-full py-4 bg-maroon font-bold uppercase tracking-widest hover:bg-red-800 transition">Submit Inquiry</button>
+            <div class="bg-white p-12 rounded-3xl text-navy shadow-2xl">
+                <form class="space-y-6">
+                    <input type="text" placeholder="Full Name" class="w-full p-4 rounded-xl border-2 border-gray-100 focus:border-maroon outline-none bg-gray-50 font-semibold">
+                    <input type="email" placeholder="Email Address" class="w-full p-4 rounded-xl border-2 border-gray-100 focus:border-maroon outline-none bg-gray-50 font-semibold">
+                    <textarea placeholder="Tell us how we can help..." class="w-full p-4 rounded-xl border-2 border-gray-100 focus:border-maroon outline-none bg-gray-50 font-semibold h-40"></textarea>
+                    <button class="bg-maroon w-full py-5 rounded-xl text-white font-extrabold uppercase tracking-widest shadow-xl hover:bg-navy transition text-xl">Send Inquiry</button>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-navy text-white py-12">
+    <footer class="bg-black text-white py-12">
         <div class="container mx-auto px-6 text-center">
-            <img src="images/bugaya logo.png" class="h-32 mx-auto mb-6 brightness-0 invert">
-            <div class="flex justify-center space-x-8 mb-8 text-2xl">
-                <a href="#" class="hover:text-maroon"><i class="fab fa-facebook"></i></a>
+            <img src="images/bugaya logo.png" alt="Footer Logo" class="h-32 mx-auto mb-8 brightness-0 invert">
+            <div class="flex justify-center space-x-10 mb-8 text-3xl">
+                <a href="#" class="hover:text-maroon"><i class="fa-brands fa-facebook"></i></a>
                 <a href="#" class="hover:text-maroon"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" class="hover:text-maroon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-maroon"><i class="fa-brands fa-linkedin"></i></a>
             </div>
-            <p class="text-blue-400 text-xs uppercase tracking-widest">&copy; 2025 Bageye Investment Limited. All Rights Reserved.</p>
+            <p class="text-gray-500 font-bold uppercase tracking-widest text-sm">&copy; 2025 Bageye Investment Limited. Reliability & Excellence.</p>
         </div>
     </footer>
 
-    <!-- SLIDER SCRIPT -->
+    <!-- SLIDER LOGIC -->
     <script>
         const slides = document.querySelectorAll('.slider-img');
         let current = 0;
