@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- This sets the text on the browser tab -->
     <title>Bageye Investment | Logistics & Truck Spares</title>
+    
+    <!-- This displays your logo on the browser tab (Favicon) -->
+    <link rel="icon" type="image/png" href="images/bugaya logo.png">
+    <!-- For mobile devices/Apple bookmarks -->
+    <link rel="apple-touch-icon" href="images/bugaya logo.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
@@ -53,7 +61,7 @@
             position: relative;
             overflow: hidden;
             padding-bottom: 5rem;
-            scroll-margin-top: 80px; /* Offset for sticky nav */
+            scroll-margin-top: 80px;
         }
 
         #team-area img.member-img {
@@ -73,7 +81,6 @@
             height: clamp(25rem, 30vw, 31.25rem);
             background: radial-gradient(circle, #00458f8f 0%, #00458e00 60%, #ffffff00 100%);
             border-radius: 50%;
-            z-index: 1;
         }
 
         .circle-bottom {
@@ -84,7 +91,6 @@
             height: clamp(25rem, 30vw, 31.25rem);
             background: radial-gradient(circle, #00458f8f 0%, #00458e00 65%, #ffffff00 100%);
             border-radius: 50%;
-            z-index: 1;
         }
 
         .team-header {
@@ -203,20 +209,15 @@
     <!-- NAVIGATION TABS -->
     <nav class="bg-white shadow-xl sticky top-0 z-50 py-4 font-extrabold uppercase text-sm">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            
-            <!-- Logo - Normal Proportions -->
             <a href="#home" class="flex-shrink-0">
                 <img src="images/bugaya logo.png" alt="Bageye Logo" class="h-20 md:h-28 w-auto object-contain">
             </a>
-
-            <!-- Menu Links - About Us updated to #team-area -->
             <div class="hidden lg:flex items-center space-x-10 text-navy">
                 <a href="#home" class="hover:text-maroon transition">Home</a>
                 <a href="#team-area" class="hover:text-maroon transition">About Us</a>
                 <a href="#services" class="hover:text-maroon transition">Our Services</a>
                 <a href="#contact" class="bg-maroon text-white px-6 py-3 rounded hover:bg-navy transition shadow-md">Contact</a>
             </div>
-            
             <button class="lg:hidden text-3xl text-navy focus:outline-none"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
@@ -270,7 +271,7 @@
         </div>
     </section>
 
-    <!-- TEAM MANAGEMENT SECTION (ID is used for the About Us Link) -->
+    <!-- TEAM MANAGEMENT SECTION -->
     <div id="team-area">
         <div class="circle-top"></div>
         <div class="circle-bottom"></div>
