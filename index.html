@@ -46,15 +46,6 @@
         }
         .hero-content { position: relative; z-index: 10; }
 
-        /* Independent Floating Logo Logic */
-        .floating-logo-container {
-            position: absolute;
-            top: -15px; /* Pulls it up into the white bar area */
-            left: 0;
-            z-index: 100;
-            filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.15)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.2));
-        }
-
         /* TEAM SECTION CUSTOM CSS */
         #team-area {
             background: #1f2c3a;
@@ -209,24 +200,23 @@
     </div>
 
     <!-- NAVIGATION TABS -->
-    <nav class="bg-white shadow-xl sticky top-0 z-50 py-6 font-extrabold uppercase text-sm">
-        <div class="container mx-auto px-6 flex justify-between items-center relative">
+    <nav class="bg-white shadow-xl sticky top-0 z-50 py-4 font-extrabold uppercase text-sm">
+        <div class="container mx-auto px-6 flex justify-between items-center">
             
-            <!-- Floating Independent Logo -->
-            <div class="relative h-10 w-40 md:w-60">
-                <a href="#home" class="floating-logo-container">
-                    <img src="images/bugaya logo.png" alt="Bageye Logo" class="h-32 md:h-60 w-auto">
-                </a>
-            </div>
+            <!-- Attached Logo - Normal Proportions -->
+            <a href="#home" class="flex-shrink-0">
+                <img src="images/bugaya logo.png" alt="Bageye Logo" class="h-20 md:h-28 w-auto object-contain">
+            </a>
 
-            <!-- Menu shifted to right -->
+            <!-- Menu Links -->
             <div class="hidden lg:flex items-center space-x-10 text-navy">
                 <a href="#home" class="hover:text-maroon transition">Home</a>
                 <a href="#about" class="hover:text-maroon transition">About Us</a>
                 <a href="#services" class="hover:text-maroon transition">Our Services</a>
                 <a href="#contact" class="bg-maroon text-white px-6 py-3 rounded hover:bg-navy transition shadow-md">Contact</a>
             </div>
-            <button class="lg:hidden text-3xl text-navy"><i class="fas fa-bars"></i></button>
+            
+            <button class="lg:hidden text-3xl text-navy focus:outline-none"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
@@ -237,7 +227,7 @@
         <div class="slider-img" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="hero-overlay"></div>
         <div class="container mx-auto px-6 hero-content text-center md:text-left">
-            <div class="max-w-4xl md:ml-40 lg:ml-64"> <!-- Added margin to avoid being covered by the giant logo -->
+            <div class="max-w-4xl">
                 <h1 class="text-5xl md:text-8xl font-black mb-6 leading-none uppercase italic text-white">
                     Bageye <br><span>Investment</span>
                 </h1>
@@ -290,36 +280,12 @@
           </div>
         </header>
         <section class="team-grid">
-          <div class="card">
-            <img class="member-img" src="images/CEO.png" alt="CEO">
-            <h2>Jaffer Hussein ssenfuka</h2>
-            <p>CEO</p>
-          </div>
-          <div class="card">
-            <img class="member-img" src="images/Director.png" alt="Director">
-            <h2>Abubakari Muhammad .K</h2>
-            <p>Director</p>
-          </div>
-          <div class="card">
-            <img class="member-img" src="images/Transport Manager.png" alt="Transport Manager">
-            <h2>Idirisa m ssemambo</h2>
-            <p>Transport manager</p>
-          </div>
-          <div class="card">
-            <img class="member-img" src="images/Secretary.png" alt="Secretary">
-            <h2>Nusura hussein .N</h2>
-            <p>Secretary</p>
-          </div>
-          <div class="card">
-            <img class="member-img" src="images/Workshop manager.png" alt="Workshop Manager">
-            <h2>Joseph kalisimati .S</h2>
-            <p>Workshop Manager</p>
-          </div>
-          <div class="card">
-            <img class="member-img" src="images/Liason officer.png" alt="Liason officer">
-            <h2>James Balitta Ruta</h2>
-            <p>Liason officer</p>
-          </div>
+          <div class="card"><img class="member-img" src="images/CEO.png" alt="CEO"><h2>Jaffer Hussein ssenfuka</h2><p>CEO</p></div>
+          <div class="card"><img class="member-img" src="images/Director.png" alt="Director"><h2>Abubakari Muhammad .K</h2><p>Director</p></div>
+          <div class="card"><img class="member-img" src="images/Transport Manager.png" alt="TM"><h2>Idirisa m ssemambo</h2><p>Transport manager</p></div>
+          <div class="card"><img class="member-img" src="images/Secretary.png" alt="Sec"><h2>Nusura hussein .N</h2><p>Secretary</p></div>
+          <div class="card"><img class="member-img" src="images/Workshop manager.png" alt="WM"><h2>Joseph kalisimati .S</h2><p>Workshop Manager</p></div>
+          <div class="card"><img class="member-img" src="images/Liason officer.png" alt="LO"><h2>James Balitta Ruta</h2><p>Liason officer</p></div>
         </section>
     </div>
 
@@ -352,7 +318,7 @@
 
     <!-- FOOTER -->
     <footer class="bg-black py-12 text-center text-white border-t border-gray-900">
-        <img src="images/bugaya logo.png" class="h-48 mx-auto mb-6 brightness-0 invert">
+        <img src="images/bugaya logo.png" class="h-32 mx-auto mb-6 brightness-0 invert">
         <p class="text-gray-500 font-bold text-xs uppercase tracking-widest">&copy; 2025 Bageye Investment Limited. Reliability & Excellence.</p>
     </footer>
 
