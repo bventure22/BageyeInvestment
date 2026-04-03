@@ -6,7 +6,7 @@
     <title>Bageye Investment | Logistics & Truck Spares</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #0d1137;
@@ -46,25 +46,149 @@
         }
         .hero-content { position: relative; z-index: 10; }
 
-        .card-shadow {
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+        /* TEAM SECTION CUSTOM CSS */
+        #team-area {
+            background: #1f2c3a;
+            font-family: "Nunito", sans-serif;
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 5rem;
         }
-        .card-shadow:hover { transform: translateY(-5px); }
 
-        /* Mobile Menu Animation */
-        #mobile-menu {
-            transition: all 0.3s ease-in-out;
+        #team-area img.member-img {
+            border-radius: 50%;
+            width: clamp(100px, 40vw, 130px);
+            height: clamp(100px, 40vw, 130px);
+            object-fit: cover;
+            object-position: top;
+            border: 4px solid #48627a;
+        }
+
+        .circle-top {
+            width: clamp(25rem, 30vw, 31.25rem);
+            position: absolute;
+            top: 3em;
+            left: -8em;
+            height: clamp(25rem, 30vw, 31.25rem);
+            background: radial-gradient(circle, #00458f8f 0%, #00458e00 60%, #ffffff00 100%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .circle-bottom {
+            width: clamp(25rem, 30vw, 31.25rem);
+            position: absolute;
+            bottom: -5em;
+            right: -8em;
+            height: clamp(25rem, 30vw, 31.25rem);
+            background: radial-gradient(circle, #00458f8f 0%, #00458e00 65%, #ffffff00 100%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .team-header {
+            background: linear-gradient(to top, #1f2c3a 0%, #2f3c4742 100%),
+                url("https://images.unsplash.com/photo-1590496793907-35377ea9947d?q=80&w=1920&auto=format&fit=crop") no-repeat 50% 50% / cover;
+            width: 100%;
+            min-height: 30em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .header-content-team {
+            width: min(55em, 95%);
+            margin-top: 2em;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-content-team span {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: clamp(2.5rem, 2rem + 3vw, 4.5rem); 
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .header-content-team h1 {
+            font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem); 
+            font-weight: 400;
+            line-height: 1.6;
+            color: #cbd5e1 !important;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: 'Nunito', sans-serif !important;
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 75em;
+            margin-inline: auto;
+            gap: 1.5rem;
+            transform: translatey(-3em);
+            position: relative;
+            z-index: 10;
+        }
+
+        .team-grid .card {
+            padding: 1.875em 1.25em;
+            max-width: 18.75rem;
+            width: 100%;
+            height: 17.5rem;
+            display: grid;
+            place-content: center;
+            place-items: center;
+            text-align: center;
+            position: relative;
+            background: transparent;
+        }
+
+        .team-grid .card::before {
+            position: absolute;
+            content: "";
+            top: 0; left: 0; width: 100%; height: 100%;
+            border-radius: 1rem;
+            z-index: -1;
+            border: 0.125rem solid transparent;
+            background: linear-gradient(45deg, #1e272e, #48627a) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+        }
+
+        .team-grid h2 {
+            color: #fff;
+            letter-spacing: 0.05rem;
+            font-size: clamp(1.1rem, 1rem + 0.3125vw, 1.3rem);
+            margin-top: 0.825em;
+            margin-bottom: 0.188em;
+            font-weight: 700;
+        }
+
+        .team-grid p {
+            color: #afafaf;
+            font-size: clamp(0.85rem, 0.8rem + 0.1875vw, 1rem);
+            text-transform: capitalize;
         }
     </style>
 </head>
 <body>
 
-    <!-- SHORTENED TOP BAR -->
+    <!-- TOP BAR -->
     <div class="bg-navy text-white py-2 hidden lg:block border-b border-white/10">
         <div class="container mx-auto px-6 flex justify-between items-center text-xs font-bold uppercase tracking-widest">
             <div class="flex space-x-8">
-                <span><i class="fas fa-location-dot text-maroon mr-2"></i> Ushirika Building, Dar es Salaam</span>
+                <span><i class="fas fa-location-dot text-maroon mr-2"></i> CO-Architecture Building, Dar es Salaam</span>
                 <span><i class="fas fa-phone-flip text-maroon mr-2"></i> +255 747 222 777</span>
             </div>
             <div class="flex space-x-6 items-center">
@@ -76,32 +200,18 @@
     </div>
 
     <!-- NAVIGATION TABS -->
-    <nav class="bg-white shadow-xl sticky top-0 z-50 py-3">
-        <div class="container mx-auto px-6 flex justify-between items-center">
+    <nav class="bg-white shadow-xl sticky top-0 z-50 py-3 font-extrabold uppercase text-sm">
+        <div class="container mx-auto px-6 flex justify-between items-center text-navy">
             <a href="#home">
                 <img src="images/bugaya logo.png" alt="Bageye Logo" class="h-14 md:h-20 w-auto">
             </a>
-
-            <!-- Desktop Menu -->
-            <div class="hidden lg:flex items-center space-x-10 text-navy font-extrabold uppercase text-sm">
+            <div class="hidden lg:flex items-center space-x-10">
                 <a href="#home" class="hover:text-maroon transition">Home</a>
                 <a href="#about" class="hover:text-maroon transition">About Us</a>
                 <a href="#services" class="hover:text-maroon transition">Our Services</a>
-                <a href="#contact" class="bg-maroon text-white px-6 py-3 rounded hover:bg-navy transition">Contact</a>
+                <a href="#contact" class="bg-maroon text-white px-6 py-3 rounded hover:bg-navy transition shadow-md">Contact</a>
             </div>
-            
-            <!-- Mobile Toggle -->
-            <button id="menu-btn" class="lg:hidden text-3xl text-navy focus:outline-none">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 flex flex-col p-6 space-y-4 font-bold uppercase text-navy">
-            <a href="#home" class="mobile-link">Home</a>
-            <a href="#about" class="mobile-link">About Us</a>
-            <a href="#services" class="mobile-link">Our Services</a>
-            <a href="#contact" class="text-maroon">Contact Us</a>
+            <button class="lg:hidden text-3xl"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
@@ -110,118 +220,108 @@
         <div class="slider-img active" style="background-image: url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="slider-img" style="background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="slider-img" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80');"></div>
-        
         <div class="hero-overlay"></div>
-
-        <div class="container mx-auto px-6 hero-content">
-            <div class="max-w-4xl text-center md:text-left">
-                <h1 class="text-5xl md:text-8xl font-black mb-6 leading-none uppercase italic">
-                    Bageye <br><span class="text-white">Investment</span>
+        <div class="container mx-auto px-6 hero-content text-center md:text-left">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl md:text-8xl font-black mb-6 leading-none uppercase italic text-white">
+                    Bageye <br><span>Investment</span>
                 </h1>
-                <p class="text-xl md:text-3xl font-bold text-gray-200 border-l-8 border-maroon pl-6 max-w-2xl">
-                    Truck Spares & Global Logistics Excellence.
-                </p>
-                <div class="mt-10 flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#services" class="bg-maroon px-10 py-4 rounded-full font-black uppercase tracking-widest shadow-lg hover:bg-white hover:text-navy transition">Our Services</a>
-                    <a href="#contact" class="border-2 border-white px-10 py-4 rounded-full font-black uppercase tracking-widest hover:bg-white hover:text-navy transition">Request Quote</a>
-                </div>
+                <p class="text-xl md:text-3xl font-bold text-gray-200 border-l-8 border-maroon pl-6 uppercase tracking-tight">Truck Spares & Global Logistics</p>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
-            <div class="lg:w-1/2">
-                <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=800&q=80" class="rounded-2xl shadow-2xl border-b-8 border-maroon">
-            </div>
-            <div class="lg:w-1/2">
-                <h2 class="text-navy text-4xl md:text-5xl font-extrabold uppercase mb-6 tracking-tighter italic">About Us</h2>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6 font-medium">
-                    Located in the heart of Dar es Salaam at the <strong>Ushirika Building</strong>, Bageye Investment Limited is a powerhouse in the East African logistics and heavy-duty automotive sectors.
-                </p>
-                <p class="text-lg text-gray-700 leading-relaxed font-medium">
-                    We specialize in high-capacity road freight and are a trusted supplier of genuine European truck components, ensuring your fleet remains operational 24/7.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES CARDS (The requested 6 Cards) -->
-    <section id="services" class="py-20 bg-gray-50 border-t border-b border-gray-100">
+    <!-- SOLUTIONS GRID -->
+    <section id="services" class="py-20 bg-gray-50 border-t border-gray-100">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-6xl font-black text-navy uppercase mb-16 italic underline decoration-maroon underline-offset-8">Our Solutions</h2>
-            
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-4 border-maroon">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg border-b-4 border-maroon">
                     <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=600&q=400" class="h-56 w-full object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-navy mb-4 h-16 flex items-center justify-center">Road Freight Transportation</h3>
-                        <a href="#contact" class="text-maroon font-black uppercase text-sm hover:underline">Show more →</a>
-                    </div>
+                    <div class="p-8 font-bold"><h3 class="text-xl text-navy mb-4 h-12 flex items-center justify-center">Road Freight Transportation</h3><a href="#" class="text-maroon uppercase text-sm">Show more →</a></div>
                 </div>
-                <!-- Card 2 -->
-                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-4 border-maroon">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg border-b-4 border-maroon">
                     <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=400" class="h-56 w-full object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-navy mb-4 h-16 flex items-center justify-center">Heavy-Duty Transportation</h3>
-                        <a href="#contact" class="text-maroon font-black uppercase text-sm hover:underline">Show more →</a>
-                    </div>
+                    <div class="p-8 font-bold"><h3 class="text-xl text-navy mb-4 h-12 flex items-center justify-center">Heavy-Duty Transportation</h3><a href="#" class="text-maroon uppercase text-sm">Show more →</a></div>
                 </div>
-                <!-- Card 3 -->
-                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-4 border-maroon">
-                    <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=600&q=400" class="h-56 w-full object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-navy mb-4 h-16 flex items-center justify-center text-sm md:text-2xl">Heavy Truck Spare Part Solutions</h3>
-                        <a href="#contact" class="text-maroon font-black uppercase text-sm hover:underline">Show more →</a>
-                    </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg border-b-4 border-maroon">
+                    <img src="https://images.unsplash.com/photo-1486006396193-471a28893047?auto=format&fit=crop&w=600&q=400" class="h-56 w-full object-cover">
+                    <div class="p-8 font-bold"><h3 class="text-xl text-navy mb-4 h-12 flex items-center justify-center text-sm md:text-lg">Heavy Truck Spare Part Solutions</h3><a href="#" class="text-maroon uppercase text-sm">Show more →</a></div>
                 </div>
-                <!-- Card 4 -->
-                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-4 border-maroon">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg border-b-4 border-maroon">
                     <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=400" class="h-56 w-full object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-navy mb-4 h-16 flex items-center justify-center">Last-Mile Delivery</h3>
-                        <a href="#contact" class="text-maroon font-black uppercase text-sm hover:underline">Show more →</a>
-                    </div>
+                    <div class="p-8 font-bold"><h3 class="text-xl text-navy mb-4 h-12 flex items-center justify-center">Last-Mile Delivery</h3><a href="#" class="text-maroon uppercase text-sm">Show more →</a></div>
                 </div>
-                <!-- Card 5 -->
-                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-4 border-maroon">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg border-b-4 border-maroon">
                     <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=400" class="h-56 w-full object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-navy mb-4 h-16 flex items-center justify-center">Cargo Handling</h3>
-                        <a href="#contact" class="text-maroon font-black uppercase text-sm hover:underline">Show more →</a>
-                    </div>
+                    <div class="p-8 font-bold"><h3 class="text-xl text-navy mb-4 h-12 flex items-center justify-center">Cargo Handling</h3><a href="#" class="text-maroon uppercase text-sm">Show more →</a></div>
                 </div>
-                <!-- Card 6 -->
-                <div class="bg-white rounded-xl overflow-hidden card-shadow border-b-4 border-maroon">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg border-b-4 border-maroon">
                     <img src="https://images.unsplash.com/photo-1566694271453-390536dd1f0d?auto=format&fit=crop&w=600&q=400" class="h-56 w-full object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-navy mb-4 h-16 flex items-center justify-center">Logistics Support</h3>
-                        <a href="#contact" class="text-maroon font-black uppercase text-sm hover:underline">Show more →</a>
-                    </div>
+                    <div class="p-8 font-bold"><h3 class="text-xl text-navy mb-4 h-12 flex items-center justify-center">Logistics Support</h3><a href="#" class="text-maroon uppercase text-sm">Show more →</a></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- TEAM MANAGEMENT SECTION -->
+    <div id="team-area">
+        <div class="circle-top"></div>
+        <div class="circle-bottom"></div>
+        <header class="team-header">
+          <div class="header-content-team">
+            <span>company management</span>
+            <h1>Our team is a powerhouse of industry veterans and tech-forward innovators dedicated to conquering the road.</h1>
+          </div>
+        </header>
+        <section class="team-grid">
+          <div class="card">
+            <img class="member-img" src="images/CEO.png" alt="CEO">
+            <h2>Jina Kamili</h2>
+            <p>CEO</p>
+          </div>
+          <div class="card">
+            <img class="member-img" src="images/Director.png" alt="Director">
+            <h2>Jina Kamili</h2>
+            <p>Director</p>
+          </div>
+          <div class="card">
+            <img class="member-img" src="images/Transport Manager.png" alt="Transport Manager">
+            <h2>Jina Kamili</h2>
+            <p>Transport manager</p>
+          </div>
+          <div class="card">
+            <img class="member-img" src="images/Secretary.png" alt="Secretary">
+            <h2>Jina Kamili</h2>
+            <p>Secretary</p>
+          </div>
+          <div class="card">
+            <img class="member-img" src="images/Workshop manager.png" alt="Workshop Manager">
+            <h2>Jina Kamili</h2>
+            <p>Workshop Manager</p>
+          </div>
+        </section>
+    </div>
+
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-20 bg-navy text-white">
+    <section id="contact" class="py-20 bg-navy text-white text-center md:text-left">
         <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16">
-            <div>
-                <h2 class="text-5xl font-black uppercase mb-10 italic">Let's Connect</h2>
-                <div class="space-y-8 font-bold text-lg">
-                    <p><i class="fas fa-building text-maroon mr-4"></i> Ushirika Building, Dar es Salaam</p>
+            <div class="font-bold">
+                <h2 class="text-5xl font-black uppercase mb-10 italic underline decoration-maroon underline-offset-8">Let's Connect</h2>
+                <div class="space-y-6 text-lg">
+                    <div class="flex items-start">
+                        <i class="fas fa-location-dot text-maroon mr-4 mt-2"></i>
+                        <p>CO-Architecture Building, 2nd Floor,<br>P. O. Box 79986,<br>India & Bridge Streets,<br>Dar es Salaam.</p>
+                    </div>
                     <p><i class="fas fa-envelope text-maroon mr-4"></i> bageyeinvestment2002@gmail.com</p>
                     <p><i class="fas fa-phone text-maroon mr-4"></i> +255 747 222 777</p>
                 </div>
             </div>
-            <div class="bg-white p-10 rounded-2xl shadow-2xl">
-                <form class="space-y-6 text-navy">
+            <div class="bg-white p-10 rounded-2xl shadow-2xl text-navy">
+                <form class="space-y-6">
                     <input type="text" placeholder="Your Name" class="w-full p-4 border-b-2 border-gray-200 outline-none focus:border-maroon font-bold">
                     <input type="email" placeholder="Email Address" class="w-full p-4 border-b-2 border-gray-200 outline-none focus:border-maroon font-bold">
-                    <textarea placeholder="Your Message" class="w-full p-4 h-32 border-b-2 border-gray-200 outline-none focus:border-maroon font-bold"></textarea>
-                    <button class="bg-maroon w-full py-4 text-white font-black uppercase tracking-widest shadow-xl hover:bg-black transition">Send Inquiry</button>
+                    <button class="bg-maroon w-full py-4 text-white font-black uppercase shadow-xl hover:bg-black transition">Send Inquiry</button>
                 </form>
             </div>
         </div>
@@ -230,12 +330,9 @@
     <!-- FOOTER -->
     <footer class="bg-black py-12 text-center text-white border-t border-gray-900">
         <img src="images/bugaya logo.png" class="h-28 mx-auto mb-6 brightness-0 invert">
-        <p class="text-gray-500 font-bold text-xs uppercase tracking-widest">
-            &copy; 2025 Bageye Investment Limited. All Rights Reserved.
-        </p>
+        <p class="text-gray-500 font-bold text-xs uppercase tracking-widest">&copy; 2025 Bageye Investment Limited. Reliability & Excellence.</p>
     </footer>
 
-    <!-- SLIDER & MENU SCRIPT -->
     <script>
         // Hero Slider
         const slides = document.querySelectorAll('.slider-img');
@@ -244,20 +341,7 @@
             slides[current].classList.remove('active');
             current = (current + 1) % slides.length;
             slides[current].classList.add('active');
-        }, 6000);
-
-        // Mobile Menu Toggle
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-        
-        // Auto-close menu on link click
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => menu.classList.add('hidden'));
-        });
+        }, 5000);
     </script>
-
 </body>
 </html>
